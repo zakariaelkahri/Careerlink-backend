@@ -1,0 +1,48 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: carrerlink
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: careerlink1
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user_password
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: carrerlink11
+    restart: always
+    environment:
+      PMA_HOST: mysql
+      MYSQL_ROOT_PASSWORD: root_password
+    ports:
+      - "8081:80"
+
+  php:
+    build:
+      context: ./php
+      dockerfile: Dockerfile
+    container_name: carrerlink12
+    restart: always
+    volumes:
+      - ./src/Views:/var/www/html
+    ports:
+      - "81:80"
+
+
+
+  composer:
+    image: composer
+    volumes:
+      - .:/app
+    working_dir: /app
+
+
+
+volumes:
+  mysql_data:
