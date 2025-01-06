@@ -21,8 +21,6 @@ class SignUpController
         //     echo '';
         // }else{
 
-
-
         // }
         
     }
