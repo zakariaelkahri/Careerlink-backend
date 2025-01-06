@@ -1,3 +1,11 @@
+<?php
+require_once "./vendor/autoload.php";
+
+    use App\Config\Database;
+    $db = new Database();
+    $db->connect();
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +24,7 @@
             <nav class="space-x-6">
                 <a href="#about" class="hover:underline">About Us</a>
                 <a href="#features" class="hover:underline">Features</a>
-                <a href="./auth/login.php" class="hover:underline">sign in</a>
+                <a href="./src/Views/auth/login.php" class="hover:underline">sign in</a>
             </nav>
         </div>
     </header>
@@ -27,8 +35,8 @@
             <h2 class="text-4xl font-bold text-blue-700 mb-4">Find Your Dream Job or Hire the Best Talent</h2>
             <p class="text-gray-700 mb-6">CareerLink connects candidates and recruiters to create opportunities that matter.</p>
             <div class="space-x-4">
-                <a href="./auth/login.php" class="bg-blue-600 text-white py-2 px-4 rounded-lg shadow hover:bg-blue-700">For Job Seekers</a>
-                <a href="./auth/login.php" class="bg-blue-600 text-white py-2 px-4 rounded-lg shadow hover:bg-blue-700">For Recruiters</a>
+                <a href="./src/Views/auth/login.php" class="bg-blue-600 text-white py-2 px-4 rounded-lg shadow hover:bg-blue-700">For Job Seekers</a>
+                <a href="./src/Views/auth/login.php" class="bg-blue-600 text-white py-2 px-4 rounded-lg shadow hover:bg-blue-700">For Recruiters</a>
             </div>
         </div>
     </section>

@@ -1,5 +1,43 @@
 <?php
-    require_once "../../../vendor/autoload.php"
+    require_once "../../../vendor/autoload.php";
+
+    use App\Controllers\AuthController ;
+    use App\Controllers\SignUpController ;
+
+    if(isset($_POST["login"])){
+        
+        if(empty($_POST["email"]) || empty($_POST["password"] )){
+
+            echo "email or password is empty";
+
+        }else{
+
+            $email = $_POST["email"];
+            $password = $_POST["password"];
+
+            $login = new AuthController ;
+            $login->login($email,$password);
+        }
+    }
+
+    
+    if(isset($_POST["sign_up"])){
+        
+        if(empty($_POST["role"]) || empty($_POST["email"]) || empty($_POST["password"] ) ){
+
+            echo "email or password is empty";
+
+        }else{
+            $role = $_POST["role"];
+            $email = $_POST["email"];
+            $password = $_POST["password"];
+
+            $signup = new SignUpController ;
+            $signup->signUp($email,$password,$role);
+        }
+
+    }
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,12 +53,15 @@
 <body>
     <div class="wrapper">
         <div class="form-container sign-up">
-            <form action="../" method="POST">
+            <form action="" method="POST">
                 <h2>sign up</h2>
                 <div class="form-group">
-                    <input type="text" name="name" required>
-                    <i class="fas fa-user"></i>
-                    <label for="">username</label>
+                    <select name="role" id="role">
+                        <option value="">Le role</option>
+                        <option value="2">Recruteur</option>
+                        <option value="3">Candidat</option>
+
+                    </select>
                 </div>
                 <div class="form-group">
                     <input type="email" name="email" required>
@@ -32,11 +73,7 @@
                     <i class="fas fa-lock"></i>
                     <label for="">password</label>
                 </div>
-                <div class="form-group">
-                    <input type="password" name="confirm_password" required>
-                    <i class="fas fa-lock"></i>
-                    <label for="">confirm password</label>
-                </div>
+
                 <button type="submit" name="sign_up" class="btn">sign up</button>
                 <div class="link">
                     <p>You already have an account?<a href="#" class="signin-link"> sign in</a></p>
@@ -47,7 +84,7 @@
             </form>
         </div>
         <div class="form-container sign-in">
-            <form action="./admin.php" method="post">
+            <form action="" method="post">
                 <h2>login</h2>
                 <div class="form-group">
                     <input type="email" name="email" required>

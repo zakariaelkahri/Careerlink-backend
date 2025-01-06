@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Espace Client</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=1.1">
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
     <header>
@@ -14,7 +14,7 @@
                 <li>
                     <a href="#">
 
-                        <h2 class="title">careerlink</h2>
+                        <h2 class="title">careerlink recruteur</h2>
                     </a>
                 </li>
 

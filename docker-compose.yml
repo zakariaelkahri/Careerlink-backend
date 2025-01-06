@@ -1,7 +1,7 @@
 services:
   mysql:
     image: mysql:8.0
-    container_name: carrerlink
+    container_name: carrerlinknew
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root_password
@@ -15,7 +15,7 @@ services:
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: carrerlink11
+    container_name: carrerlink11new
     restart: always
     environment:
       PMA_HOST: mysql
@@ -27,22 +27,12 @@ services:
     build:
       context: ./php
       dockerfile: Dockerfile
-    container_name: carrerlink12
+    container_name: carrerlink12new
     restart: always
     volumes:
-      - ./src/Views:/var/www/html
+      - ./project:/var/www/html
     ports:
-      - "81:80"
-
-
-
-  composer:
-    image: composer
-    volumes:
-      - .:/app
-    working_dir: /app
-
-
+      - "82:80"
 
 volumes:
   mysql_data:
