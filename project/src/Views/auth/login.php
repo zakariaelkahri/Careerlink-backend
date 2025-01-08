@@ -8,7 +8,7 @@
         
         if(empty($_POST["email"]) || empty($_POST["password"] )){
 
-            echo "email or password is empty";
+            echo"email or password inccorect";
 
         }else{
 
@@ -25,8 +25,7 @@
         
         if(empty($_POST["role"]) || empty($_POST["email"]) || empty($_POST["password"] ) ){
 
-            echo "email or password is empty";
-
+            echo "email or password already exist";            
         }else{
             $role = $_POST["role"];
             $email = $_POST["email"];
@@ -55,9 +54,9 @@
         <div class="form-container sign-up">
             <form action="" method="POST">
                 <h2>sign up</h2>
-                <div class="form-group">
+                <div  class="form-group" id="selectentr">
                     <select name="role" id="role">
-                        <option value="">Le role</option>
+                        <option value="0">Le role</option>
                         <option value="2">Recruteur</option>
                         <option value="3">Candidat</option>
 
@@ -73,7 +72,11 @@
                     <i class="fas fa-lock"></i>
                     <label for="">password</label>
                 </div>
-
+                <div id="entreprise" class="form-group">
+                    <input type="text" name="company_name" required>
+                    <label for="">Entreprise</label>
+                </div>
+                <!-- <p>echo $_SESSION["Errorsignin"];</p>  -->
                 <button type="submit" name="sign_up" class="btn">sign up</button>
                 <div class="link">
                     <p>You already have an account?<a href="#" class="signin-link"> sign in</a></p>
@@ -86,6 +89,7 @@
         <div class="form-container sign-in">
             <form action="" method="post">
                 <h2>login</h2>
+
                 <div class="form-group">
                     <input type="email" name="email" required>
                     <i class="fas fa-user"></i>
@@ -96,8 +100,10 @@
                     <i class="fas fa-lock"></i>
                     <label for="">password</label>
                 </div>
-                <div class="forgot-pass">
-                </div>
+
+                <!-- <div class="forgot-pass">
+                </div> -->
+                <!-- <p> echo $_SESSION["Errorsignup"];</p> -->
                 <button type="submit" name="login" class="btn">login</button>
                 <div class="link">
                     <p>Don't have an account?<a href="#" class="signup-link"> sign up</a></p>

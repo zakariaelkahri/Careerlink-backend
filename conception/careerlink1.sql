@@ -215,8 +215,8 @@ INSERT INTO `tag` (`id`, `name`) VALUES
 
 CREATE TABLE `users` (
   `id` int NOT NULL,
-  `email` char(100) NOT NULL,
-  `password` char(100) DEFAULT NULL,
+  `email` char(100) UNIQUE NOT NULL,
+  `password` char(200) DEFAULT NULL,
   `role_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 

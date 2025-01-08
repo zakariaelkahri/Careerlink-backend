@@ -1,6 +1,8 @@
 <?php
+ 
+ namespace App\Controllers ;
+ 
 
-namespace App\Controllers ;
 
 
 use App\Models\UserModel;
@@ -12,7 +14,7 @@ use App\Models\UserModel;
             $usermodel = new UserModel ;
             $user = $usermodel->findUserByEmailAndPassword($email,$password) ;
             
-
+        
             if($user == null){
                 echo 'email or password is incorrect';
             }else{

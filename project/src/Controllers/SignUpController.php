@@ -13,18 +13,9 @@ class SignUpController
 
         $adduser = new UserModel ; 
         $signup = $adduser->AddUser($email,$password,$role);
-        $usermodel = new UserModel ;
-        // $user = $usermodel->findUserByEmailAndPassword($email,$password) ;
-
-
-        // if($user == null){
-        //     echo '';
-        // }else{
-
-        // }
-        
     }
 
-}
+
+}    
 
 ?>
